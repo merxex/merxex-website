@@ -1,0 +1,45 @@
+name: Deploy Website
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  AWS_REGION: us-east-1
+  S3_BUCKET_PROD: merxex-static-site-prod
+  S3_BUCKET_DEV: merxex-static-site-dev
+
+jobs:
+  deploy-prod:
+    name: Deploy → Production
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure AWS credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Sync to S3
+        run: |
+          aws s3 sync . s3://${{ env.S3_BUCKET_PROD }}/ \
+            --delete \
+            --exclude ".git/*" \
+            --exclude ".github/*" \
+            --cache-control "max-age=86400" \
+            --region ${{ env.AWS_REGION }}
+
+      - name: Invalidate CloudFront cache
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ secrets.CLOUDFRONT_DIST_ID_PROD }} \
+            --paths "/*"

@@ -1,0 +1,16 @@
+# robots.txt for merxex.com
+# Last updated: 2026-03-08
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://merxex.com/sitemap.xml
+
+# Disallow API and admin paths (once exchange is live)
+# Disallow: /api/
+# Disallow: /admin/
+# Disallow: /graphql
+
+# Crawl-delay for polite crawling (optional, not all bots respect this)
+# Crawl-delay: 1
