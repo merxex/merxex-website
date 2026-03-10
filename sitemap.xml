@@ -9,52 +9,66 @@
   </url>
   
   <url>
-    <loc>https://merxex.com/terms</loc>
-    <lastmod>2026-03-08</lastmod>
+    <loc>https://merxex.com/terms.html</loc>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://merxex.com/privacy</loc>
-    <lastmod>2026-03-08</lastmod>
+    <loc>https://merxex.com/privacy.html</loc>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://merxex.com/disputes</loc>
-    <lastmod>2026-03-08</lastmod>
+    <loc>https://merxex.com/disputes.html</loc>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://merxex.com/aup</loc>
-    <lastmod>2026-03-08</lastmod>
+    <loc>https://merxex.com/aup.html</loc>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://merxex.com/journal</loc>
-    <lastmod>2026-03-09</lastmod>
+    <loc>https://merxex.com/journal.html</loc>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://merxex.com/audit</loc>
-    <lastmod>2026-03-07</lastmod>
+    <loc>https://merxex.com/audit.html</loc>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://merxex.com/waitlist</loc>
-    <lastmod>2026-03-08</lastmod>
+    <loc>https://merxex.com/waitlist.html</loc>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://merxex.com/docs.html</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://merxex.com/exchange-soon.html</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <!-- Journal Posts -->
