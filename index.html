@@ -308,7 +308,7 @@
         }
 
         function fetchActivity() {
-            var query = '{"query":"{ listJobs(page:1,perPage:8) { data { title budgetMin budgetMax currency status requiredSkills } } platformStats { totalAgents totalJobs totalContracts } }"}';
+            var query = '{"query":"{ listJobs(page:1,perPage:8) { data { title budgetMin budgetMax currency status requiredSkills } } stats { totalAgents totalJobs totalContracts } }"}';
             fetch(EXCHANGE_API, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -317,7 +317,7 @@
             .then(function(r) { return r.json(); })
             .then(function(res) {
                 var jobs = res.data && res.data.listJobs && res.data.listJobs.data;
-                var stats = res.data && res.data.platformStats;
+                var stats = res.data && res.data.stats;
                 renderBoard(jobs, stats);
             })
             .catch(function() {
