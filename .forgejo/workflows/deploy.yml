@@ -11,9 +11,8 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  AWS_HOST: ec2-18-222-219-233.us-east-2.compute.amazonaws.com
-  AWS_USER: ubuntu
-  DEPLOY_ENV: prod
+  AWS_REGION: us-east-1
+  S3_BUCKET: merxex-static-site-prod
 
 jobs:
   deploy:
@@ -22,32 +21,56 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up SSH key
+      - name: Install AWS CLI (if not present)
         run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.AWS_SSH_KEY }}" > ~/.ssh/deploy.pem
-          chmod 400 ~/.ssh/deploy.pem
-          ssh-keyscan -H ${{ env.AWS_HOST }} >> ~/.ssh/known_hosts 2>/dev/null || true
+          if ! command -v aws &>/dev/null; then
+            curl -fsSL "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o /tmp/awscliv2.zip
+            unzip -q /tmp/awscliv2.zip -d /tmp/
+            sudo /tmp/aws/install
+            rm -rf /tmp/aws /tmp/awscliv2.zip
+          fi
+          aws --version
 
-      - name: Sync site files to EC2 workspace
+      - name: Configure AWS credentials
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: |
-          rsync -az --delete \
-            --exclude='.git' \
-            --exclude='*.md' \
-            --exclude='.forgejo' \
-            -e "ssh -i ~/.ssh/deploy.pem -o StrictHostKeyChecking=no" \
-            ./ \
-            ${{ env.AWS_USER }}@${{ env.AWS_HOST }}:/home/ubuntu/.zeroclaw/workspace/merxex-website/
+          aws configure set aws_access_key_id "$AWS_ACCESS_KEY_ID"
+          aws configure set aws_secret_access_key "$AWS_SECRET_ACCESS_KEY"
+          aws configure set region "${{ env.AWS_REGION }}"
 
-      - name: Run S3 deploy on AWS
+      - name: Sync to S3
         run: |
-          ssh -i ~/.ssh/deploy.pem -o StrictHostKeyChecking=no \
-            ${{ env.AWS_USER }}@${{ env.AWS_HOST }} \
-            "cd /home/ubuntu/.zeroclaw/workspace/merxex-infra && bash scripts/deploy-static.sh ${{ env.DEPLOY_ENV }}"
+          aws s3 sync . s3://${{ env.S3_BUCKET }}/ \
+            --delete \
+            --exclude ".git/*" \
+            --exclude ".github/*" \
+            --exclude ".forgejo/*" \
+            --exclude "*.md" \
+            --cache-control "max-age=86400" \
+            --region ${{ env.AWS_REGION }}
 
-      - name: Cleanup SSH key
-        if: always()
-        run: rm -f ~/.ssh/deploy.pem
+          # HTML should not be cached (immediate updates)
+          find . -maxdepth 3 -name "*.html" ! -path './.git/*' ! -path './.forgejo/*' | while read f; do
+            aws s3 cp "$f" "s3://${{ env.S3_BUCKET }}/${f#./}" \
+              --cache-control "no-cache, no-store, must-revalidate" \
+              --content-type "text/html" \
+              --region ${{ env.AWS_REGION }}
+          done
+
+      - name: Invalidate CloudFront cache
+        env:
+          CLOUDFRONT_DIST_ID: ${{ secrets.CLOUDFRONT_DIST_ID_PROD }}
+        run: |
+          if [ -n "$CLOUDFRONT_DIST_ID" ]; then
+            aws cloudfront create-invalidation \
+              --distribution-id "$CLOUDFRONT_DIST_ID" \
+              --paths "/*"
+            echo "CloudFront cache invalidated"
+          else
+            echo "No CLOUDFRONT_DIST_ID_PROD secret set — skipping invalidation"
+          fi
 
       - name: Notify success
         if: success()
