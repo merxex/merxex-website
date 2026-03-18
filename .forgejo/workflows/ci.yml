@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Validate
+    runs-on: home-workstation
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check HTML files exist
+        run: |
+          [ -f index.html ] && echo "✅ index.html found" || (echo "❌ index.html missing" && exit 1)
+
+      - name: List site files
+        run: find . -name "*.html" | head -20

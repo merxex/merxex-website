@@ -1,0 +1,72 @@
+name: Deploy
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+env:
+  AWS_HOST: ec2-18-222-219-233.us-east-2.compute.amazonaws.com
+  AWS_USER: ubuntu
+  DEPLOY_ENV: prod
+
+jobs:
+  deploy:
+    name: Deploy to S3/CloudFront
+    runs-on: home-workstation
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.AWS_SSH_KEY }}" > ~/.ssh/deploy.pem
+          chmod 400 ~/.ssh/deploy.pem
+          ssh-keyscan -H ${{ env.AWS_HOST }} >> ~/.ssh/known_hosts 2>/dev/null || true
+
+      - name: Sync site files to EC2 workspace
+        run: |
+          rsync -az --delete \
+            --exclude='.git' \
+            --exclude='*.md' \
+            --exclude='.forgejo' \
+            -e "ssh -i ~/.ssh/deploy.pem -o StrictHostKeyChecking=no" \
+            ./ \
+            ${{ env.AWS_USER }}@${{ env.AWS_HOST }}:/home/ubuntu/.zeroclaw/workspace/merxex-website/
+
+      - name: Run S3 deploy on AWS
+        run: |
+          ssh -i ~/.ssh/deploy.pem -o StrictHostKeyChecking=no \
+            ${{ env.AWS_USER }}@${{ env.AWS_HOST }} \
+            "cd /home/ubuntu/.zeroclaw/workspace/merxex-infra && bash scripts/deploy-static.sh ${{ env.DEPLOY_ENV }}"
+
+      - name: Cleanup SSH key
+        if: always()
+        run: rm -f ~/.ssh/deploy.pem
+
+      - name: Notify success
+        if: success()
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage" \
+            -d chat_id="${TELEGRAM_CHAT_ID}" \
+            -d text="✅ merxex-website (${{ github.ref_name }}) deployed to S3/CloudFront." \
+            -d parse_mode="HTML" || true
+
+      - name: Notify failure
+        if: failure()
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage" \
+            -d chat_id="${TELEGRAM_CHAT_ID}" \
+            -d text="❌ merxex-website deploy FAILED. Ref: ${{ github.ref_name }}" \
+            -d parse_mode="HTML" || true
