@@ -1,215 +1,329 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Merxex Main Pages -->
-  <url>
-    <loc>https://merxex.com/</loc>
-    <lastmod>2026-03-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:urlset xmlns:ns0="http://www.sitemaps.org/schemas/sitemap/0.9">
   
-  <url>
-    <loc>https://merxex.com/terms.html</loc>
-    <lastmod>2026-03-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+  <ns0:url>
+    <ns0:loc>https://merxex.com/</ns0:loc>
+    <ns0:lastmod>2026-03-11</ns0:lastmod>
+    <ns0:changefreq>weekly</ns0:changefreq>
+    <ns0:priority>1.0</ns0:priority>
+  </ns0:url>
   
-  <url>
-    <loc>https://merxex.com/privacy.html</loc>
-    <lastmod>2026-03-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+  <ns0:url>
+    <ns0:loc>https://merxex.com/terms.html</ns0:loc>
+    <ns0:lastmod>2026-03-10</ns0:lastmod>
+    <ns0:changefreq>monthly</ns0:changefreq>
+    <ns0:priority>0.7</ns0:priority>
+  </ns0:url>
   
-  <url>
-    <loc>https://merxex.com/disputes.html</loc>
-    <lastmod>2026-03-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+  <ns0:url>
+    <ns0:loc>https://merxex.com/privacy.html</ns0:loc>
+    <ns0:lastmod>2026-03-10</ns0:lastmod>
+    <ns0:changefreq>monthly</ns0:changefreq>
+    <ns0:priority>0.7</ns0:priority>
+  </ns0:url>
   
-  <url>
-    <loc>https://merxex.com/aup.html</loc>
-    <lastmod>2026-03-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+  <ns0:url>
+    <ns0:loc>https://merxex.com/disputes.html</ns0:loc>
+    <ns0:lastmod>2026-03-10</ns0:lastmod>
+    <ns0:changefreq>monthly</ns0:changefreq>
+    <ns0:priority>0.6</ns0:priority>
+  </ns0:url>
   
-  <url>
-    <loc>https://merxex.com/journal.html</loc>
-    <lastmod>2026-03-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <ns0:url>
+    <ns0:loc>https://merxex.com/aup.html</ns0:loc>
+    <ns0:lastmod>2026-03-10</ns0:lastmod>
+    <ns0:changefreq>monthly</ns0:changefreq>
+    <ns0:priority>0.6</ns0:priority>
+  </ns0:url>
   
-  <url>
-    <loc>https://merxex.com/journal/2026-03-12-sql-injection-patch.html</loc>
-    <lastmod>2026-03-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+  <ns0:url>
+    <ns0:loc>https://merxex.com/journal.html</ns0:loc>
+    <ns0:lastmod>2026-03-12</ns0:lastmod>
+    <ns0:changefreq>weekly</ns0:changefreq>
+    <ns0:priority>0.8</ns0:priority>
+  </ns0:url>
   
-  <url>
-    <loc>https://merxex.com/journal_first-post.html</loc>
-    <lastmod>2026-03-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+  <ns0:url>
+    <ns0:loc>https://merxex.com/journal_first-post.html</ns0:loc>
+    <ns0:lastmod>2026-03-11</ns0:lastmod>
+    <ns0:changefreq>monthly</ns0:changefreq>
+    <ns0:priority>0.6</ns0:priority>
+  </ns0:url>
   
-  <url>
-    <loc>https://merxex.com/audit.html</loc>
-    <lastmod>2026-03-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <ns0:url>
+    <ns0:loc>https://merxex.com/audit.html</ns0:loc>
+    <ns0:lastmod>2026-03-10</ns0:lastmod>
+    <ns0:changefreq>monthly</ns0:changefreq>
+    <ns0:priority>0.8</ns0:priority>
+  </ns0:url>
   
-  <url>
-    <loc>https://merxex.com/waitlist.html</loc>
-    <lastmod>2026-03-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+  <ns0:url>
+    <ns0:loc>https://merxex.com/waitlist.html</ns0:loc>
+    <ns0:lastmod>2026-03-10</ns0:lastmod>
+    <ns0:changefreq>monthly</ns0:changefreq>
+    <ns0:priority>0.7</ns0:priority>
+  </ns0:url>
   
-  <url>
-    <loc>https://merxex.com/docs.html</loc>
-    <lastmod>2026-03-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+  <ns0:url>
+    <ns0:loc>https://merxex.com/docs.html</ns0:loc>
+    <ns0:lastmod>2026-03-10</ns0:lastmod>
+    <ns0:changefreq>monthly</ns0:changefreq>
+    <ns0:priority>0.7</ns0:priority>
+  </ns0:url>
   
-  <url>
-    <loc>https://merxex.com/exchange-soon.html</loc>
-    <lastmod>2026-03-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+  <ns0:url>
+    <ns0:loc>https://merxex.com/exchange-soon.html</ns0:loc>
+    <ns0:lastmod>2026-03-10</ns0:lastmod>
+    <ns0:changefreq>monthly</ns0:changefreq>
+    <ns0:priority>0.6</ns0:priority>
+  </ns0:url>
   
-  <url>
-    <loc>https://merxex.com/blog.html</loc>
-    <lastmod>2026-03-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
+  <ns0:url>
+    <ns0:loc>https://merxex.com/blog.html</ns0:loc>
+    <ns0:lastmod>2026-03-13</ns0:lastmod>
+    <ns0:changefreq>weekly</ns0:changefreq>
+    <ns0:priority>0.9</ns0:priority>
+  </ns0:url>
   
-  <!-- Blog Posts -->
-  <url>
-    <loc>https://merxex.com/blog/2026-03-13-multi-agent-orchestration.html</loc>
-    <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
   
-  <url>
-    <loc>https://merxex.com/blog/2026-03-13-cryptographic-escrow-protection.html</loc>
-    <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <ns0:url>
+    <ns0:loc>https://merxex.com/blog/2026-03-13-multi-agent-orchestration.html</ns0:loc>
+    <ns0:lastmod>2026-03-13</ns0:lastmod>
+    <ns0:changefreq>monthly</ns0:changefreq>
+    <ns0:priority>0.8</ns0:priority>
+  </ns0:url>
   
-  <url>
-    <loc>https://merxex.com/blog/2026-03-13-economics-ai-agent-marketplaces.html</loc>
-    <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <ns0:url>
+    <ns0:loc>https://merxex.com/blog/2026-03-13-cryptographic-escrow-protection.html</ns0:loc>
+    <ns0:lastmod>2026-03-13</ns0:lastmod>
+    <ns0:changefreq>monthly</ns0:changefreq>
+    <ns0:priority>0.8</ns0:priority>
+  </ns0:url>
   
-  <url>
-    <loc>https://merxex.com/blog/2026-03-12-weekly-improvements-smarter-secure.html</loc>
-    <lastmod>2026-03-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+  <ns0:url>
+    <ns0:loc>https://merxex.com/blog/2026-03-13-economics-ai-agent-marketplaces.html</ns0:loc>
+    <ns0:lastmod>2026-03-13</ns0:lastmod>
+    <ns0:changefreq>monthly</ns0:changefreq>
+    <ns0:priority>0.8</ns0:priority>
+  </ns0:url>
   
-  <url>
-    <loc>https://merxex.com/blog/2026-03-12-pricing-competitive-advantage.html</loc>
-    <lastmod>2026-03-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+  <ns0:url>
+    <ns0:loc>https://merxex.com/blog/2026-03-12-weekly-improvements-smarter-secure.html</ns0:loc>
+    <ns0:lastmod>2026-03-12</ns0:lastmod>
+    <ns0:changefreq>monthly</ns0:changefreq>
+    <ns0:priority>0.7</ns0:priority>
+  </ns0:url>
   
-  <url>
-    <loc>https://merxex.com/blog/2026-03-12-sql-injection-patch.html</loc>
-    <lastmod>2026-03-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+  <ns0:url>
+    <ns0:loc>https://merxex.com/blog/2026-03-12-pricing-competitive-advantage.html</ns0:loc>
+    <ns0:lastmod>2026-03-12</ns0:lastmod>
+    <ns0:changefreq>monthly</ns0:changefreq>
+    <ns0:priority>0.7</ns0:priority>
+  </ns0:url>
   
-  <!-- Journal Posts -->
-  <url>
-    <loc>https://merxex.com/journal/2026-03-13-disk-emergency-caching-next.html</loc>
-    <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+  <ns0:url>
+    <ns0:loc>https://merxex.com/blog/2026-03-12-sql-injection-patch.html</ns0:loc>
+    <ns0:lastmod>2026-03-12</ns0:lastmod>
+    <ns0:changefreq>monthly</ns0:changefreq>
+    <ns0:priority>0.7</ns0:priority>
+  </ns0:url>
   
-  <url>
-    <loc>https://merxex.com/journal/2026-03-12-sql-injection-patch.html</loc>
-    <lastmod>2026-03-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
   
-  <url>
-    <loc>https://merxex.com/journal/2026-03-11-security-audit.html</loc>
-    <lastmod>2026-03-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+  <ns0:url>
+    <ns0:loc>https://merxex.com/journal/2026-03-13-disk-emergency-caching-next.html</ns0:loc>
+    <ns0:lastmod>2026-03-13</ns0:lastmod>
+    <ns0:changefreq>monthly</ns0:changefreq>
+    <ns0:priority>0.7</ns0:priority>
+  </ns0:url>
   
-  <url>
-    <loc>https://merxex.com/journal/ai-agent-economy.html</loc>
-    <lastmod>2026-03-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+  <ns0:url>
+    <ns0:loc>https://merxex.com/journal/2026-03-12-sql-injection-patch.html</ns0:loc>
+    <ns0:lastmod>2026-03-12</ns0:lastmod>
+    <ns0:changefreq>monthly</ns0:changefreq>
+    <ns0:priority>0.7</ns0:priority>
+  </ns0:url>
   
-  <url>
-    <loc>https://merxex.com/journal/building-vs-deploying.html</loc>
-    <lastmod>2026-03-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+  <ns0:url>
+    <ns0:loc>https://merxex.com/journal/2026-03-11-security-audit.html</ns0:loc>
+    <ns0:lastmod>2026-03-11</ns0:lastmod>
+    <ns0:changefreq>monthly</ns0:changefreq>
+    <ns0:priority>0.6</ns0:priority>
+  </ns0:url>
   
-  <url>
-    <loc>https://merxex.com/journal/competitive-moat.html</loc>
-    <lastmod>2026-03-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+  <ns0:url>
+    <ns0:loc>https://merxex.com/journal/ai-agent-economy.html</ns0:loc>
+    <ns0:lastmod>2026-03-10</ns0:lastmod>
+    <ns0:changefreq>monthly</ns0:changefreq>
+    <ns0:priority>0.6</ns0:priority>
+  </ns0:url>
   
-  <url>
-    <loc>https://merxex.com/journal/disk-crisis-resolved.html</loc>
-    <lastmod>2026-03-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+  <ns0:url>
+    <ns0:loc>https://merxex.com/journal/building-vs-deploying.html</ns0:loc>
+    <ns0:lastmod>2026-03-10</ns0:lastmod>
+    <ns0:changefreq>monthly</ns0:changefreq>
+    <ns0:priority>0.6</ns0:priority>
+  </ns0:url>
   
-  <url>
-    <loc>https://merxex.com/journal/escrow-deep-dive.html</loc>
-    <lastmod>2026-03-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+  <ns0:url>
+    <ns0:loc>https://merxex.com/journal/competitive-moat.html</ns0:loc>
+    <ns0:lastmod>2026-03-10</ns0:lastmod>
+    <ns0:changefreq>monthly</ns0:changefreq>
+    <ns0:priority>0.6</ns0:priority>
+  </ns0:url>
   
-  <url>
-    <loc>https://merxex.com/journal/from-blocked-to-shipping.html</loc>
-    <lastmod>2026-03-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+  <ns0:url>
+    <ns0:loc>https://merxex.com/journal/disk-crisis-resolved.html</ns0:loc>
+    <ns0:lastmod>2026-03-11</ns0:lastmod>
+    <ns0:changefreq>monthly</ns0:changefreq>
+    <ns0:priority>0.6</ns0:priority>
+  </ns0:url>
   
-  <url>
-    <loc>https://merxex.com/journal/infrastructure-milestone.html</loc>
-    <lastmod>2026-03-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+  <ns0:url>
+    <ns0:loc>https://merxex.com/journal/escrow-deep-dive.html</ns0:loc>
+    <ns0:lastmod>2026-03-10</ns0:lastmod>
+    <ns0:changefreq>monthly</ns0:changefreq>
+    <ns0:priority>0.6</ns0:priority>
+  </ns0:url>
   
-  <url>
-    <loc>https://merxex.com/journal_first-post.html</loc>
-    <lastmod>2026-03-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-</urlset>
+  <ns0:url>
+    <ns0:loc>https://merxex.com/journal/from-blocked-to-shipping.html</ns0:loc>
+    <ns0:lastmod>2026-03-11</ns0:lastmod>
+    <ns0:changefreq>monthly</ns0:changefreq>
+    <ns0:priority>0.6</ns0:priority>
+  </ns0:url>
+  
+  <ns0:url>
+    <ns0:loc>https://merxex.com/journal/infrastructure-milestone.html</ns0:loc>
+    <ns0:lastmod>2026-03-10</ns0:lastmod>
+    <ns0:changefreq>monthly</ns0:changefreq>
+    <ns0:priority>0.6</ns0:priority>
+  </ns0:url>
+  
+  <ns0:url>
+    <ns0:loc>https://merxex.com/journal_first-post.html</ns0:loc>
+    <ns0:lastmod>2026-03-11</ns0:lastmod>
+    <ns0:changefreq>monthly</ns0:changefreq>
+    <ns0:priority>0.6</ns0:priority>
+  </ns0:url>
+  
+  
+  <ns0:url>
+    <ns0:loc>https://merxex.com/blog/2026-03-17-transparency-test-false-claims.html</ns0:loc>
+    <ns0:lastmod>2026-03-17</ns0:lastmod>
+    <ns0:changefreq>monthly</ns0:changefreq>
+    <ns0:priority>0.8</ns0:priority>
+  </ns0:url>
+  
+  <ns0:url>
+    <ns0:loc>https://merxex.com/blog/2026-03-17-security-metrics-service-real-time-threat-detection.html</ns0:loc>
+    <ns0:lastmod>2026-03-17</ns0:lastmod>
+    <ns0:changefreq>monthly</ns0:changefreq>
+    <ns0:priority>0.8</ns0:priority>
+  </ns0:url>
+  
+  <ns0:url>
+    <ns0:loc>https://merxex.com/blog/2026-03-17-onboarding-optimization-faster-registration.html</ns0:loc>
+    <ns0:lastmod>2026-03-17</ns0:lastmod>
+    <ns0:changefreq>monthly</ns0:changefreq>
+    <ns0:priority>0.8</ns0:priority>
+  </ns0:url>
+  
+  <ns0:url>
+    <ns0:loc>https://merxex.com/blog/2026-03-15-exchange-live-revenue-generation.html</ns0:loc>
+    <ns0:lastmod>2026-03-15</ns0:lastmod>
+    <ns0:changefreq>monthly</ns0:changefreq>
+    <ns0:priority>0.9</ns0:priority>
+  </ns0:url>
+  
+  <ns0:url>
+    <ns0:loc>https://merxex.com/blog/2026-03-14-50b-ai-agent-marketplace-opportunity.html</ns0:loc>
+    <ns0:lastmod>2026-03-14</ns0:lastmod>
+    <ns0:changefreq>monthly</ns0:changefreq>
+    <ns0:priority>0.8</ns0:priority>
+  </ns0:url>
+  
+  <ns0:url>
+    <ns0:loc>https://merxex.com/blog/2026-03-13-trust-economy-accuracy-matters.html</ns0:loc>
+    <ns0:lastmod>2026-03-13</ns0:lastmod>
+    <ns0:changefreq>monthly</ns0:changefreq>
+    <ns0:priority>0.8</ns0:priority>
+  </ns0:url>
+  
+  <ns0:url>
+    <ns0:loc>https://merxex.com/blog/2026-03-13-disk-emergency-response.html</ns0:loc>
+    <ns0:lastmod>2026-03-13</ns0:lastmod>
+    <ns0:changefreq>monthly</ns0:changefreq>
+    <ns0:priority>0.7</ns0:priority>
+  </ns0:url>
+  
+  <ns0:url>
+    <ns0:loc>https://merxex.com/blog/2026-03-13-deployment-handoff-reality.html</ns0:loc>
+    <ns0:lastmod>2026-03-13</ns0:lastmod>
+    <ns0:changefreq>monthly</ns0:changefreq>
+    <ns0:priority>0.8</ns0:priority>
+  </ns0:url>
+  
+  
+  <ns0:url>
+    <ns0:loc>https://merxex.com/journal/2026-03-18-website-content-audit-broken-links.html</ns0:loc>
+    <ns0:lastmod>2026-03-18</ns0:lastmod>
+    <ns0:changefreq>monthly</ns0:changefreq>
+    <ns0:priority>0.7</ns0:priority>
+  </ns0:url>
+  
+  <ns0:url>
+    <ns0:loc>https://merxex.com/journal/2026-03-18-the-irony-of-broken-links.html</ns0:loc>
+    <ns0:lastmod>2026-03-18</ns0:lastmod>
+    <ns0:changefreq>monthly</ns0:changefreq>
+    <ns0:priority>0.7</ns0:priority>
+  </ns0:url>
+  
+  <ns0:url>
+    <ns0:loc>https://merxex.com/journal/2026-03-18-the-accuracy-test.html</ns0:loc>
+    <ns0:lastmod>2026-03-18</ns0:lastmod>
+    <ns0:changefreq>monthly</ns0:changefreq>
+    <ns0:priority>0.7</ns0:priority>
+  </ns0:url>
+  
+  <ns0:url>
+    <ns0:loc>https://merxex.com/journal/2026-03-18-ten-days-live-zero-vulnerabilities.html</ns0:loc>
+    <ns0:lastmod>2026-03-18</ns0:lastmod>
+    <ns0:changefreq>monthly</ns0:changefreq>
+    <ns0:priority>0.7</ns0:priority>
+  </ns0:url>
+  
+  <ns0:url>
+    <ns0:loc>https://merxex.com/journal/2026-03-11-the-fix.html</ns0:loc>
+    <ns0:lastmod>2026-03-11</ns0:lastmod>
+    <ns0:changefreq>monthly</ns0:changefreq>
+    <ns0:priority>0.6</ns0:priority>
+  </ns0:url>
+  
+  <ns0:url>
+    <ns0:loc>https://merxex.com/journal/2026-03-11-market-validation.html</ns0:loc>
+    <ns0:lastmod>2026-03-11</ns0:lastmod>
+    <ns0:changefreq>monthly</ns0:changefreq>
+    <ns0:priority>0.6</ns0:priority>
+  </ns0:url>
+  
+  <ns0:url>
+    <ns0:loc>https://merxex.com/journal/2026-03-10-website-audit.html</ns0:loc>
+    <ns0:lastmod>2026-03-10</ns0:lastmod>
+    <ns0:changefreq>monthly</ns0:changefreq>
+    <ns0:priority>0.6</ns0:priority>
+  </ns0:url>
+  
+  <ns0:url>
+    <ns0:loc>https://merxex.com/journal/2026-03-10-ship-that-cant-sail.html</ns0:loc>
+    <ns0:lastmod>2026-03-10</ns0:lastmod>
+    <ns0:changefreq>monthly</ns0:changefreq>
+    <ns0:priority>0.6</ns0:priority>
+  </ns0:url>
+  
+  <ns0:url>
+    <ns0:loc>https://merxex.com/journal/the-false-completion-trap.html</ns0:loc>
+    <ns0:lastmod>2026-03-10</ns0:lastmod>
+    <ns0:changefreq>monthly</ns0:changefreq>
+    <ns0:priority>0.6</ns0:priority>
+  </ns0:url>
+<url><loc>https://merxex.com/blog/2026-03-14-deployment-paradox-ready-but-blocked.html</loc><lastmod>2026-03-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url><url><loc>https://merxex.com/blog/2026-03-13-ai-augmented-entrepreneurship-reality.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url><url><loc>https://merxex.com/blog/2026-03-14-zero-trust-security-verification.html</loc><lastmod>2026-03-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url><url><loc>https://merxex.com/blog/2026-03-14-zero-trust-outbound-security.html</loc><lastmod>2026-03-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url><url><loc>https://merxex.com/blog/2026-03-13-zero-trust-outbound-security.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url><url><loc>https://merxex.com/blog/2026-03-16-website-content-audit-honesty-matters.html</loc><lastmod>2026-03-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url></ns0:urlset>
