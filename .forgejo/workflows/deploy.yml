@@ -21,56 +21,50 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install AWS CLI (if not present)
+      - name: Install AWS CLI (user-local, no sudo)
         run: |
-          if ! command -v aws &>/dev/null; then
+          if ! command -v aws &>/dev/null && [ ! -x "$HOME/.local/aws-cli/v2/current/bin/aws" ]; then
             curl -fsSL "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o /tmp/awscliv2.zip
             unzip -q /tmp/awscliv2.zip -d /tmp/
-            sudo /tmp/aws/install
+            /tmp/aws/install --install-dir "$HOME/.local/aws-cli" --bin-dir "$HOME/.local/bin" --update
             rm -rf /tmp/aws /tmp/awscliv2.zip
           fi
+          export PATH="$HOME/.local/bin:$PATH"
           aws --version
 
-      - name: Configure AWS credentials
+      - name: Sync to S3
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: us-east-1
         run: |
-          aws configure set aws_access_key_id "$AWS_ACCESS_KEY_ID"
-          aws configure set aws_secret_access_key "$AWS_SECRET_ACCESS_KEY"
-          aws configure set region "${{ env.AWS_REGION }}"
-
-      - name: Sync to S3
-        run: |
+          export PATH="$HOME/.local/bin:$PATH"
           aws s3 sync . s3://${{ env.S3_BUCKET }}/ \
             --delete \
             --exclude ".git/*" \
             --exclude ".github/*" \
             --exclude ".forgejo/*" \
             --exclude "*.md" \
-            --cache-control "max-age=86400" \
-            --region ${{ env.AWS_REGION }}
+            --cache-control "max-age=86400"
 
-          # HTML should not be cached (immediate updates)
-          find . -maxdepth 3 -name "*.html" ! -path './.git/*' ! -path './.forgejo/*' | while read f; do
+          # Re-upload HTML with no-cache headers
+          find . -name "*.html" ! -path './.git/*' ! -path './.forgejo/*' ! -path './.github/*' | while read f; do
             aws s3 cp "$f" "s3://${{ env.S3_BUCKET }}/${f#./}" \
               --cache-control "no-cache, no-store, must-revalidate" \
-              --content-type "text/html" \
-              --region ${{ env.AWS_REGION }}
+              --content-type "text/html"
           done
 
       - name: Invalidate CloudFront cache
         env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: us-east-1
           CLOUDFRONT_DIST_ID: ${{ secrets.CLOUDFRONT_DIST_ID_PROD }}
         run: |
-          if [ -n "$CLOUDFRONT_DIST_ID" ]; then
-            aws cloudfront create-invalidation \
-              --distribution-id "$CLOUDFRONT_DIST_ID" \
-              --paths "/*"
-            echo "CloudFront cache invalidated"
-          else
-            echo "No CLOUDFRONT_DIST_ID_PROD secret set — skipping invalidation"
-          fi
+          export PATH="$HOME/.local/bin:$PATH"
+          aws cloudfront create-invalidation \
+            --distribution-id "$CLOUDFRONT_DIST_ID" \
+            --paths "/*"
 
       - name: Notify success
         if: success()
