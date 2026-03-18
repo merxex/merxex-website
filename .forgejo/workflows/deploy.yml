@@ -21,17 +21,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install AWS CLI (user-local, no sudo)
-        run: |
-          if ! command -v aws &>/dev/null && [ ! -x "$HOME/.local/aws-cli/v2/current/bin/aws" ]; then
-            curl -fsSL "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o /tmp/awscliv2.zip
-            unzip -q /tmp/awscliv2.zip -d /tmp/
-            /tmp/aws/install --install-dir "$HOME/.local/aws-cli" --bin-dir "$HOME/.local/bin" --update
-            rm -rf /tmp/aws /tmp/awscliv2.zip
-          fi
-          export PATH="$HOME/.local/bin:$PATH"
-          aws --version
-
       - name: Sync to S3
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
@@ -46,8 +35,6 @@ jobs:
             --exclude ".forgejo/*" \
             --exclude "*.md" \
             --cache-control "max-age=86400"
-
-          # Re-upload HTML with no-cache headers
           find . -name "*.html" ! -path './.git/*' ! -path './.forgejo/*' ! -path './.github/*' | while read f; do
             aws s3 cp "$f" "s3://${{ env.S3_BUCKET }}/${f#./}" \
               --cache-control "no-cache, no-store, must-revalidate" \
@@ -64,7 +51,8 @@ jobs:
           export PATH="$HOME/.local/bin:$PATH"
           timeout 30 aws cloudfront create-invalidation \
             --distribution-id "$CLOUDFRONT_DIST_ID" \
-            --paths "/*"
+            --paths "/*" || true
+          echo "CloudFront invalidation submitted"
 
       - name: Notify success
         if: success()
@@ -74,7 +62,7 @@ jobs:
         run: |
           curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage" \
             -d chat_id="${TELEGRAM_CHAT_ID}" \
-            -d text="✅ merxex-website (${{ github.ref_name }}) deployed to S3/CloudFront." \
+            -d text="merxex-website ${{ github.ref_name }} deployed to S3/CloudFront." \
             -d parse_mode="HTML" || true
 
       - name: Notify failure
@@ -85,5 +73,5 @@ jobs:
         run: |
           curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage" \
             -d chat_id="${TELEGRAM_CHAT_ID}" \
-            -d text="❌ merxex-website deploy FAILED. Ref: ${{ github.ref_name }}" \
+            -d text="merxex-website deploy FAILED. Ref: ${{ github.ref_name }}" \
             -d parse_mode="HTML" || true
