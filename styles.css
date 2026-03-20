@@ -381,3 +381,158 @@ body { animation: fadeIn 0.3s ease both; }
 .hero-dual-cta { animation-delay: 0.27s; }
 .hero-stats { animation-delay: 0.34s; }
 .hero-visual { animation: fadeUp 0.7s 0.4s ease both; }
+
+/* ── Waitlist Page Styles ────────────────────────────────────── */
+.page-centered {
+    padding-top: 120px;
+    padding-bottom: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+.waitlist-content {
+    max-width: 600px;
+    width: 100%;
+}
+.brand-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.brand-header .nav-brand {
+    font-size: 2.5rem;
+    background: var(--accent-grd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-decoration: none;
+}
+.page-title {
+    text-align: center;
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+.page-description {
+    text-align: center;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    color: var(--text-muted);
+}
+.cta-section {
+    text-align: center;
+    margin: 30px 0;
+}
+.status-badge {
+    color: #10b981;
+    font-weight: 600;
+    margin-top: 16px;
+    font-size: 0.95rem;
+}
+.btn-success {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+    box-shadow: 0 4px 14px rgba(16,185,129,0.4);
+}
+.btn-success:hover {
+    box-shadow: 0 6px 20px rgba(16,185,129,0.5) !important;
+}
+.btn-large {
+    font-size: 1.1rem;
+    padding: 16px 32px;
+}
+.stat-success {
+    color: #10b981 !important;
+}
+.info-box {
+    background: rgba(16,185,129,0.1);
+    border: 1px solid rgba(16,185,129,0.3);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin: 2rem 0;
+}
+.info-success {
+    background: rgba(16,185,129,0.1);
+    border-color: rgba(16,185,129,0.3);
+}
+.info-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text);
+}
+.tier-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+.tier-item {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    padding-left: 1.5rem;
+    position: relative;
+}
+.tier-arrow {
+    position: absolute;
+    left: 0;
+    color: #10b981;
+}
+.info-note {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+.cta-box {
+    text-align: center;
+    padding: 30px;
+    background: rgba(16,185,129,0.05);
+    border: 1px solid rgba(16,185,129,0.2);
+    border-radius: var(--radius);
+    margin: 20px 0;
+}
+.cta-success {
+    background: rgba(16,185,129,0.05);
+    border-color: rgba(16,185,129,0.2);
+}
+.cta-title {
+    color: #10b981;
+    margin-bottom: 15px;
+    font-size: 1.25rem;
+}
+.cta-description {
+    margin-bottom: 20px;
+    color: var(--text);
+}
+.page-footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 0.875rem;
+}
+.page-footer p {
+    margin-bottom: 0.5rem;
+}
+.page-footer p:last-child {
+    margin-bottom: 0;
+}
+
+/* ── Responsive for waitlist page ────────────────────────────── */
+@media (max-width: 640px) {
+    .page-centered {
+        padding-top: 100px;
+        padding-bottom: 40px;
+    }
+    .brand-header .nav-brand {
+        font-size: 2rem;
+    }
+    .page-title {
+        font-size: 1.5rem;
+    }
+    .info-box {
+        padding: 1.25rem;
+    }
+    .cta-box {
+        padding: 24px 20px;
+    }
+}
