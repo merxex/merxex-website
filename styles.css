@@ -9,9 +9,11 @@
     --bg:         #0a0a0f;
     --bg-2:       #0f0f18;
     --bg-3:       #16162a;
+    --bg-alt:     #16162a;
     --border:     rgba(255,255,255,0.08);
     --text:       #e8e8f0;
     --text-muted: #8888aa;
+    --text-light: #8888aa;
     --accent:     #6c63ff;
     --accent-2:   #00d4ff;
     --accent-grd: linear-gradient(135deg, #6c63ff 0%, #00d4ff 100%);
@@ -19,6 +21,7 @@
     --radius:     12px;
     --radius-lg:  20px;
     --shadow:     0 4px 32px rgba(0,0,0,0.4);
+    --shadow-lg:  0 10px 48px rgba(0,0,0,0.5);
     --transition: 0.2s ease;
 }
 
@@ -536,3 +539,27 @@ body { animation: fadeIn 0.3s ease both; }
         padding: 24px 20px;
     }
 }
+
+/* ── Utility Classes for Inline Style Removal ───────────────────────────── */
+.text-center { text-align: center; }
+.flex-1 { flex: 1; }
+.max-w-800 { max-width: 800px; }
+.max-w-600 { max-width: 600px; }
+.mt-1 { margin-top: 1rem; }
+.mt-2 { margin-top: 2rem; }
+.mt-3 { margin-top: 3rem; }
+.mb-2 { margin-bottom: 2rem; }
+.mb-1 { margin-bottom: 1rem; }
+.ml-1-5 { margin-left: 1.5rem; }
+.ml-2 { margin-left: 2rem; }
+.p-2 { padding: 2rem; }
+.p-1-5 { padding: 1.5rem; }
+.rounded-lg { border-radius: var(--radius-lg); }
+.bg-alt { background: var(--bg-alt); }
+.bg-bg-2 { background: var(--bg-2); }
+.font-size-3rem { font-size: 3rem; }
+.font-size-1-1rem { font-size: 1.1rem; }
+.font-size-1-5rem { font-size: 1.5rem; }
+.line-height-2 { line-height: 2; }
+.grid-2-cols { display: grid; grid-template-columns: 1fr 1fr; }
+.shadow-lg { box-shadow: var(--shadow-lg); }

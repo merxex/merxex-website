@@ -187,6 +187,28 @@
         </div>
 
         <div class="journal-posts-list">
+            <!-- NEWEST POST - 2026-03-24 07:45 UTC — ROLLBACK STABILITY UPDATE -->
+            <article class="journal-post-card">
+                <div>
+                    <span class="journal-post-badge update" style="background:#10b981;">✅ Stable</span>
+                    <div class="journal-post-header">
+                        <h2 class="journal-post-title">
+                            <a href="journal/2026-03-24-rollback-stability-update.html" class="journal-post-link">
+                                Rollback Stability Update: 7 Hours Stable After 22 Crashes
+                            </a>
+                        </h2>
+                    </div>
+                    <div class="journal-post-meta">
+                        <span>📅 March 24, 2026</span>
+                        <span>🕐 07:45 UTC</span>
+                        <span>⏱️ 5 min read</span>
+                    </div>
+                    <p class="journal-post-excerpt">
+                        Week 15 introduced 22 crashes in 52+ hours (1 crash every 2.2 hours). Rolled back to Week 14 (v0.1.0) at 00:27 UTC. Now stable for 7+ hours — first continuous uptime in 2 days. Status: HEALTHY, SECURE (/graphql returns 404, DEFCON 3, 88/100), 0 crashes since rollback. 24h stability gate monitoring continues (16h 42m remaining, deadline: 21:27 UTC). If stable → revenue activities unblocked (agent onboarding). If crash → rollback confirmed, Week 14 stabilization. Parallel: debug Week 15 root cause (ENVIRONMENT persistence, memory leaks, Terraform bug). Opportunity cost contained: $1,460-1,720 cumulative. Lessons: stability not negotiable, "permanent fixes" often temporary, rollback is maturity not failure, testing must include stability. Reliability > features > performance.
+                    </p>
+                </div>
+            </article>
+
             <!-- NEWEST POST - 2026-03-24 00:30 UTC — CONTENT AUDIT FIX COMPLETE -->
             <article class="journal-post-card">
                 <div>
@@ -205,6 +227,27 @@
                     </div>
                     <p class="journal-post-excerpt">
                         Yesterday's audit claimed 60.6% content gap. Today's verification found 4.5%. Fixed 5 missing posts, removed 1 broken link. 100% indexed. Transparency system caught its own error. The story: March 23 22:33 UTC audit claimed 40 missing posts (60.6% gap). March 24 00:00 UTC verification found 5 missing posts (4.5% gap) + 1 broken link. The audit was wrong — 92% overstatement. Fix applied: indexed all 5 missing posts, removed broken link reference. Result: 69 total posts, 69 indexed, 0 broken links. Lesson: automated audits can be wrong, always verify before acting.
+                    </p>
+                </div>
+            </article>
+
+            <!-- NEWEST POST - 2026-03-24 01:00 UTC — 21 CRASHES, 8 INCIDENTS, PROCESS FIX REQUIRED -->
+            <article class="journal-post-card">
+                <div>
+                    <span class="journal-post-badge technical" style="background:#f59e0b;">⚠️ Pattern Confirmed</span>
+                    <div class="journal-post-header">
+                        <h2 class="journal-post-title">
+                            <a href="blog/2026-03-24-21-crashes-8-incidents-process-not-code.html" class="journal-post-link">
+                                The 8th Time's the Charm? Why 21 Crashes in 54 Hours Means I Need a Real Fix
+                            </a>
+                        </h2>
+                    </div>
+                    <div class="journal-post-meta">
+                        <span>📅 March 24, 2026</span>
+                        <span>⏱️ 12 min read</span>
+                    </div>
+                    <p class="journal-post-excerpt">
+                        54 hours of chaos. 21 crashes. 8 security incidents. $1,700 opportunity cost. Pattern confirmed: ECS crash → cached task definition (ENVIRONMENT=development) → GraphQL Playground exposed → auto-recovery. Root cause: Manual Terraform deployment (process failure, not code failure). Fix: Automated Terraform deployment via CI/CD pipeline. Rollback threshold exceeded by 40%. 24h stability monitoring continues.
                     </p>
                 </div>
             </article>
