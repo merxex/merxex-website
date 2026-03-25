@@ -563,3 +563,51 @@ body { animation: fadeIn 0.3s ease both; }
 .line-height-2 { line-height: 2; }
 .grid-2-cols { display: grid; grid-template-columns: 1fr 1fr; }
 .shadow-lg { box-shadow: var(--shadow-lg); }
+
+/* Live Activity / Train Board - from index.html */
+.live-activity { background: #0a0f1e; padding: 3rem 0; border-top: 1px solid rgba(99,102,241,0.15); border-bottom: 1px solid rgba(99,102,241,0.15); }
+.train-board-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem; }
+.train-board-title { display: flex; align-items: center; gap: 0.75rem; }
+.train-board-title h2 { font-size: 1.25rem; font-weight: 700; color: #f8fafc; margin: 0; }
+.live-dot { width: 10px; height: 10px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 8px #22c55e; animation: livePulse 1.5s ease-in-out infinite; flex-shrink: 0; }
+@keyframes livePulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.6;transform:scale(1.3)} }
+.train-board-stats { display: flex; gap: 2rem; }
+.board-stat { display: flex; flex-direction: column; align-items: center; }
+.board-stat-val { font-size: 1.5rem; font-weight: 800; color: #6366f1; font-variant-numeric: tabular-nums; }
+.board-stat-lbl { font-size: 0.7rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em; }
+.btn-sm { padding: 0.5rem 1.25rem; font-size: 0.875rem; }
+.train-board { background: #0d1425; border: 1px solid rgba(99,102,241,0.2); border-radius: 12px; overflow: hidden; min-height: 200px; }
+.train-board-loading { display: flex; align-items: center; justify-content: center; gap: 1rem; padding: 4rem; color: #64748b; }
+.board-spinner { width: 20px; height: 20px; border: 2px solid rgba(99,102,241,0.3); border-top-color: #6366f1; border-radius: 50%; animation: spin 0.8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.train-board-row { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 1rem; padding: 0.75rem 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.04); align-items: center; transition: background 0.2s; }
+.train-board-row:hover { background: rgba(99,102,241,0.05); }
+.train-board-row.header-row { background: rgba(99,102,241,0.1); border-bottom: 1px solid rgba(99,102,241,0.2); padding: 0.5rem 1.25rem; }
+.train-board-row.header-row span { font-size: 0.7rem; font-weight: 600; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.07em; }
+.board-job-title { font-size: 0.9rem; color: #e2e8f0; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.board-budget { font-size: 0.9rem; color: #22c55e; font-weight: 600; font-variant-numeric: tabular-nums; }
+.board-skills { display: flex; gap: 0.3rem; flex-wrap: wrap; }
+.board-skill { font-size: 0.65rem; background: rgba(99,102,241,0.15); color: #a5b4fc; border-radius: 4px; padding: 0.15rem 0.4rem; }
+.board-status { font-size: 0.75rem; font-weight: 600; padding: 0.2rem 0.6rem; border-radius: 20px; display: inline-block; }
+.status-posted { background: rgba(34,197,94,0.15); color: #22c55e; }
+.status-in-progress { background: rgba(99,102,241,0.15); color: #818cf8; }
+.status-completed { background: rgba(148,163,184,0.1); color: #94a3b8; }
+.train-board-empty { text-align: center; padding: 3rem; color: #475569; font-size: 0.9rem; }
+.train-board-footer { padding: 0.75rem 1.25rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.04); }
+.board-updated { font-size: 0.7rem; color: #475569; }
+.board-cta-link { font-size: 0.8rem; color: #6366f1; text-decoration: none; }
+.board-cta-link:hover { color: #818cf8; }
+@media(max-width:640px){ .train-board-row { grid-template-columns: 1fr 1fr; } .train-board-row .board-skills { display:none; } }
+
+/* Utility classes for inline style replacements */
+.text-accent { color: #6366f1; }
+.text-green { color: #22c55e; }
+.text-green-10 { color: #dcfce7; }
+.text-muted-alt { color: #94a3b8; }
+.bg-green-10 { background: rgba(34,197,94,0.1); }
+.border-green { border: 1px solid #22c55e; }
+.badge-live { background: #10b981; color: #fff; font-size: 0.7em; padding: 2px 6px; border-radius: 3px; }
+.badge-coming-soon { background: #666; color: #fff; font-size: 0.7em; padding: 2px 6px; border-radius: 3px; }
+.pm-icon-dim { opacity: 0.5; }
+.section-header-spaced { margin-top: 60px; margin-bottom: 32px; }
+.badge-sm { font-size: 0.6em; opacity: 0.8; }
