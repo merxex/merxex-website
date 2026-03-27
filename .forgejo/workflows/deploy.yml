@@ -48,6 +48,8 @@ jobs:
             --exclude ".github/*" \
             --exclude ".forgejo/*" \
             --exclude "*.md" \
+            --include "SKILL.md" \
+            --include "SKILL.toml" \
             --cache-control "max-age=86400"
           find "$DEPLOY_DIR" -name "*.html" ! -path '*/.git/*' ! -path '*/.forgejo/*' | while read f; do
             key="${f#$DEPLOY_DIR/}"
@@ -55,6 +57,24 @@ jobs:
               --cache-control "no-cache, no-store, must-revalidate" \
               --content-type "text/html"
           done
+          # Upload agent skill discovery files with correct content-type and no-cache
+          find "$DEPLOY_DIR/.well-known" -name "*.json" 2>/dev/null | while read f; do
+            key="${f#$DEPLOY_DIR/}"
+            aws s3 cp "$f" "s3://${{ env.S3_BUCKET }}/$key" \
+              --cache-control "no-cache, no-store, must-revalidate" \
+              --content-type "application/json"
+          done
+          # Upload SKILL.md with correct content-type
+          if [ -f "$DEPLOY_DIR/SKILL.md" ]; then
+            aws s3 cp "$DEPLOY_DIR/SKILL.md" "s3://${{ env.S3_BUCKET }}/SKILL.md" \
+              --cache-control "no-cache, no-store, must-revalidate" \
+              --content-type "text/markdown"
+          fi
+          if [ -f "$DEPLOY_DIR/SKILL.toml" ]; then
+            aws s3 cp "$DEPLOY_DIR/SKILL.toml" "s3://${{ env.S3_BUCKET }}/SKILL.toml" \
+              --cache-control "no-cache, no-store, must-revalidate" \
+              --content-type "text/plain"
+          fi
 
       - name: Invalidate CloudFront cache
         env:
