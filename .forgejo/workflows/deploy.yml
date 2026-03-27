@@ -21,6 +21,19 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Build (Astro) — if package.json exists
+        run: |
+          export PATH="$HOME/.nvm/versions/node/v24.11.1/bin:$HOME/.local/bin:$PATH"
+          if [ -f package.json ]; then
+            echo "Astro project detected — running build"
+            npm ci
+            npm run build
+            echo "BUILD_DIR=dist" >> $GITHUB_ENV
+          else
+            echo "Static site — no build step needed"
+            echo "BUILD_DIR=." >> $GITHUB_ENV
+          fi
+
       - name: Sync to S3
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
@@ -28,15 +41,17 @@ jobs:
           AWS_DEFAULT_REGION: us-east-1
         run: |
           export PATH="$HOME/.local/bin:$PATH"
-          aws s3 sync . s3://${{ env.S3_BUCKET }}/ \
+          DEPLOY_DIR="${BUILD_DIR:-.}"
+          aws s3 sync "$DEPLOY_DIR" s3://${{ env.S3_BUCKET }}/ \
             --delete \
             --exclude ".git/*" \
             --exclude ".github/*" \
             --exclude ".forgejo/*" \
             --exclude "*.md" \
             --cache-control "max-age=86400"
-          find . -name "*.html" ! -path './.git/*' ! -path './.forgejo/*' ! -path './.github/*' | while read f; do
-            aws s3 cp "$f" "s3://${{ env.S3_BUCKET }}/${f#./}" \
+          find "$DEPLOY_DIR" -name "*.html" ! -path '*/.git/*' ! -path '*/.forgejo/*' | while read f; do
+            key="${f#$DEPLOY_DIR/}"
+            aws s3 cp "$f" "s3://${{ env.S3_BUCKET }}/$key" \
               --cache-control "no-cache, no-store, must-revalidate" \
               --content-type "text/html"
           done
