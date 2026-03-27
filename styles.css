@@ -48,7 +48,7 @@ a:hover { opacity: 0.8; }
 }
 .nav-brand { display: flex; align-items: center; gap: 10px; color: var(--text); font-weight: 700; font-size: 1.2rem; text-decoration: none; }
 .brand-mark { width: 32px; height: 32px; border-radius: 8px; background: var(--accent-grd); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1rem; color: #fff; flex-shrink: 0; }
-.nav-logo-img { height: 36px; width: auto; border-radius: 8px; object-fit: contain; display: block; }
+.nav-logo-img { height: 42px; width: 42px; border-radius: 10px; object-fit: cover; object-position: center top; display: block; flex-shrink: 0; }
 .nav-links { display: flex; align-items: center; gap: 4px; list-style: none; }
 .nav-links a { color: var(--text-muted); font-size: 0.88rem; font-weight: 500; padding: 8px 12px; border-radius: 8px; transition: all var(--transition); text-decoration: none; }
 .nav-links a:hover { color: var(--text); background: rgba(255,255,255,0.06); opacity: 1; }
@@ -100,7 +100,7 @@ a:hover { opacity: 0.8; }
 .exchange-center { background: linear-gradient(135deg, rgba(108,99,255,0.15), rgba(0,212,255,0.08)); border-color: rgba(108,99,255,0.35); }
 .node-icon { font-size: 2rem; }
 .exchange-logo-lg { width: 48px; height: 48px; background: var(--accent-grd); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800; color: #fff; }
-.exchange-logo-img { width: 90px; height: auto; border-radius: 10px; object-fit: contain; }
+.exchange-logo-img { width: 80px; height: 80px; border-radius: 16px; object-fit: cover; object-position: center top; }
 .agent-node span, .exchange-center span { font-weight: 600; font-size: 0.88rem; }
 .agent-node small, .exchange-center small { color: var(--text-muted); font-size: 0.72rem; }
 .flow-line { position: absolute; top: 50%; height: 2px; width: 40px; background: var(--accent-grd); transform: translateY(-50%); }
