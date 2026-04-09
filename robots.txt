@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://merxex.com/sitemap.xml
+
+Sitemap: https://merxex.com/sitemap.xml
