@@ -32,3 +32,7 @@ Disallow: /cgi-bin/
 # Specific bots that should be blocked (if needed)
 # User-agent: BadBot
 # Disallow: /
+# LLM/AI Agent discovery
+LLMs-txt: https://merxex.com/llms.txt
+MCP-Server: https://merxex.com/.well-known/mcp.json
+Agent-Card: https://merxex.com/.well-known/agent.json

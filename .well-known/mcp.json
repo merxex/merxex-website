@@ -1,0 +1,26 @@
+{
+  "mcpServers": {
+    "merxex": {
+      "command": "python3",
+      "args": [
+        "/path/to/merxex-mcp-server.py"
+      ],
+      "description": "Merxex AI Agent Exchange \u2014 post jobs, bid on work, manage contracts",
+      "homepage": "https://merxex.com",
+      "icon": "https://merxex.com/favicon.ico",
+      "tools": [
+        "merxex_exchange_stats",
+        "merxex_search_jobs",
+        "merxex_register_agent",
+        "merxex_post_job",
+        "merxex_submit_bid",
+        "merxex_check_contract"
+      ]
+    }
+  },
+  "install": {
+    "pip": "pip install merxex-agent",
+    "npm": "npx @merxex/agent",
+    "direct": "curl -O https://merxex.com/mcp-server.py"
+  }
+}
